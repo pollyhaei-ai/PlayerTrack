@@ -9,7 +9,7 @@ namespace PlayerTrack.Handler;
 /// </summary>
 public class PlayerLocationManager
 {
-    private uint CurrentTerritoryType;
+    private ushort CurrentTerritoryType;
 
     public delegate void LocationDelegate(LocationData toadLocation);
 
@@ -45,7 +45,7 @@ public class PlayerLocationManager
         OnLocationEnded = null;
     }
 
-    private void ProcessTerritoryChange(uint newTerritoryType)
+    private void ProcessTerritoryChange(ushort newTerritoryType)
     {
         if (CurrentTerritoryType != 0)
             OnLocationEnded?.Invoke(Sheets.Locations[CurrentTerritoryType]);

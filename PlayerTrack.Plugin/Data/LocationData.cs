@@ -28,7 +28,7 @@ public class LocationData
     /// <summary>
     /// Gets or sets territoryTypeId.
     /// </summary>
-    public uint TerritoryId { get; set; }
+    public ushort TerritoryId { get; set; }
 
     /// <summary>
     /// Gets or sets territory type place name.

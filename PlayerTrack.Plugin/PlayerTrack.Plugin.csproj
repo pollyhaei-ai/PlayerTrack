@@ -1,8 +1,9 @@
-<Project Sdk="Dalamud.NET.Sdk/15.0.0">
+<Project Sdk="Dalamud.NET.Sdk/13.1.0">
 	<PropertyGroup>
 		<Title>PlayerTrack.Plugin</Title>
 		<Authors>Infi, kalilistic</Authors>
-		<Version>3.6.1.1</Version>
+		<Version>3.6.1.2</Version>
+		<TargetFramework>net9.0-windows7.0</TargetFramework>
 		<AssemblyName>PlayerTrack</AssemblyName>
 		<RootNamespace>PlayerTrack</RootNamespace>
 		<PackageVersion>$(Version)</PackageVersion>
