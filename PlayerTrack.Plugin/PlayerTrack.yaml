@@ -1,5 +1,6 @@
 name: PlayerTrack
 author: Infi, kalilistic
+dalamud_api_level: 13
 punchline: Keep track of players you meet.
 description: |-
     PlayerTrack helps you keep a record of who you meet and the content you played together.

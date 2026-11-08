@@ -23,7 +23,7 @@ public static class ClientStateExtension
             Name = Plugin.PlayerState.CharacterName,
             HomeWorld = Plugin.PlayerState.HomeWorld.RowId,
             ContentId = Plugin.PlayerState.ContentId,
-            Customize = Plugin.ObjectTable.LocalPlayer.Customize.ToArray(),
+            Customize = Plugin.ObjectTable.LocalPlayer.Customize,
         };
 
         return localPlayer.IsValid() ? localPlayer : null;
