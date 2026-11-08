@@ -29,9 +29,25 @@ public static class Utils
     /// </summary>
     /// <param name="seString">A lumina SeString to sanitize.</param>
     /// <returns>Indicator if player character is valid.</returns>
-    public static string Sanitize(ReadOnlySeString seString)
+    public static string Sanitize(ReadOnlySeString seString) => Sanitize(seString.ExtractText());
+
+    /// <summary>
+    /// Sanitize text. yanmucorp's sanitizer throws <see cref="ArgumentOutOfRangeException"/>
+    /// for <c>ClientLanguage.TraditionalChinese</c> and any other language it does not list.
+    /// Return the original text so sheet loading can finish.
+    /// </summary>
+    /// <param name="text">Text to sanitize.</param>
+    /// <returns>Sanitized text, or <paramref name="text"/> when the client language is unsupported.</returns>
+    public static string Sanitize(string text)
     {
-        return Plugin.PluginInterface.Sanitizer.Sanitize(seString.ExtractText());
+        try
+        {
+            return Plugin.PluginInterface.Sanitizer.Sanitize(text);
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            return text;
+        }
     }
 
     /// <summary>

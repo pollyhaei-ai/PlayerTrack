@@ -7,7 +7,7 @@ PlayerTrack 用來記錄遇見的玩家和一起打過的內容，可以分類�
 ## 安裝（XIVTCLauncher）
 
 1. 在 XIVTCLauncher 啟用 Dalamud，進過一次遊戲，讓設定資料夾建立起來，然後**關閉遊戲**。
-2. 從 [api13-tw-3.6.1.1 發行頁](https://github.com/pollyhaei-ai/PlayerTrack/releases/tag/api13-tw-3.6.1.1) 下載 `PlayerTrack-api13-tw-3.6.1.1.zip`，解壓到登入時使用的 dev plugins 資料夾。解壓後會得到 `PlayerTrack\`（內含 `PlayerTrack.dll`、`PlayerTrack.json`，以及 NuGet 相依組件）：
+2. 從 [api13-tw-3.6.1.2 發行頁](https://github.com/pollyhaei-ai/PlayerTrack/releases/tag/api13-tw-3.6.1.2) 下載 `PlayerTrack-api13-tw-3.6.1.2.zip`，解壓蓋過 `devPlugins\PlayerTrack\`。3.6.1.1 在台服載入時會因為 Dalamud 的文字清理器不接受 `TraditionalChinese` 而失敗；3.6.1.2 會改回傳原本的世界與資料中心名稱。解壓後會得到 `PlayerTrack\`（內含 `PlayerTrack.dll`、`PlayerTrack.json`，以及 NuGet 相依組件）：
    - 共用設定：`%AppData%\FFXIVSimpleLauncher\Dalamud\Config\devPlugins\`
    - 帳號自己的插件設定檔：`%AppData%\FFXIVSimpleLauncher\Profiles\<設定檔 ID>\Dalamud\devPlugins\`
 3. 確認檔案在 `devPlugins\PlayerTrack\`，`PlayerTrack.dll` 和 `PlayerTrack.json` 同一層。
@@ -44,6 +44,6 @@ PlayerTrack 用來記錄遇見的玩家和一起打過的內容，可以分類�
 
 Fork of [Infiziert90/PlayerTrack](https://github.com/Infiziert90/PlayerTrack) by Infi and kalilistic, retargeted to yanmucorp Dalamud API 13 / .NET 9 for the Traditional Chinese client and XIVTCLauncher. Do not install this on official Dalamud API 14 or 15.
 
-Download [PlayerTrack-api13-tw-3.6.1.1.zip](https://github.com/pollyhaei-ai/PlayerTrack/releases/download/api13-tw-3.6.1.1/PlayerTrack-api13-tw-3.6.1.1.zip) and extract it so `PlayerTrack.dll` and `PlayerTrack.json` sit in `%AppData%\FFXIVSimpleLauncher\Dalamud\Config\devPlugins\PlayerTrack\` (or `Profiles\<profile ID>\Dalamud\devPlugins\PlayerTrack\` when the account uses its own profile). Enable it in `/xldev`. `/ptrack` opens the main window and `/ptrackconfig` opens settings.
+Download [PlayerTrack-api13-tw-3.6.1.2.zip](https://github.com/pollyhaei-ai/PlayerTrack/releases/download/api13-tw-3.6.1.2/PlayerTrack-api13-tw-3.6.1.2.zip) and extract it over `%AppData%\FFXIVSimpleLauncher\Dalamud\Config\devPlugins\PlayerTrack\` (or `Profiles\<profile ID>\Dalamud\devPlugins\PlayerTrack\` when the account uses its own profile). 3.6.1.1 fails to load because Dalamud's text sanitizer rejects `TraditionalChinese`; 3.6.1.2 returns the original world and datacenter names instead. Enable it in `/xldev`. `/ptrack` opens the main window and `/ptrackconfig` opens settings.
 
 Nameplates, whether Taiwan worlds are recognized, and Lodestone/NetStone lookups still need in-game checks on the Taiwan client. The world filter does not hard-code an exclusion of IDs 4028–4035. Upstream is MIT.

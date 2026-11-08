@@ -275,7 +275,7 @@ public static class Sheets
                 if (cfcFound && cfc.RowId != 0)
                 {
                     location.ContentId = cfc.RowId;
-                    location.ContentName = Plugin.PluginInterface.Sanitizer.Sanitize(cfc.Name.ExtractText());
+                    location.ContentName = Utils.Sanitize(cfc.Name.ExtractText());
                     location.LocationType = cfc.HighEndDuty ? LocationType.HighEndContent : LocationType.Content;
                 }
                 else
@@ -283,7 +283,7 @@ public static class Sheets
                     location.LocationType = LocationType.Overworld;
                 }
 
-                location.TerritoryName = Plugin.PluginInterface.Sanitizer.Sanitize(location.TerritoryName);
+                location.TerritoryName = Utils.Sanitize(location.TerritoryName);
                 return location;
             });
     }
