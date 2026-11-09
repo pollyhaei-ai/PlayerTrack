@@ -8,12 +8,16 @@
 
 ## 下載
 
-請用 **3.6.1.2**，不要用 3.6.1.1。
+請用 **3.6.1.3**。
 
-- 發行頁：https://github.com/pollyhaei-ai/PlayerTrack/releases/tag/api13-tw-3.6.1.2
-- 壓縮檔：[PlayerTrack-api13-tw-3.6.1.2.zip](https://github.com/pollyhaei-ai/PlayerTrack/releases/download/api13-tw-3.6.1.2/PlayerTrack-api13-tw-3.6.1.2.zip)
+- 發行頁：https://github.com/pollyhaei-ai/PlayerTrack/releases/tag/api13-tw-3.6.1.3
+- 壓縮檔：[PlayerTrack-api13-tw-3.6.1.3.zip](https://github.com/pollyhaei-ai/PlayerTrack/releases/download/api13-tw-3.6.1.3/PlayerTrack-api13-tw-3.6.1.3.zip)
 
-3.6.1.1 在台服載入時會失敗：Dalamud 的文字清理器不接受 `TraditionalChinese`，插件在讀世界名稱時就中斷。3.6.1.2 改回傳原本的世界與資料中心名稱，並已在台服進遊戲載入。
+3.6.1.3 加入繁體中文介面。3.6.1.1 在台服載入時會失敗：Dalamud 的文字清理器不接受 `TraditionalChinese`，插件在讀世界名稱時就中斷。3.6.1.2 起改回傳原本的世界與資料中心名稱，並已在台服進遊戲載入。
+
+## 介面語言
+
+PlayerTrack 的文字跟著 Dalamud 的介面語言。請在 `/xlsettings` 把介面語言設成 **繁體中文**。這個語言代碼是 `tw`，插件會載入繁體中文。若維持預設，介面可能是英文；若設成簡體中文（`zh`），則會顯示簡體中文。
 
 ## 安裝
 
@@ -53,8 +57,10 @@
 
 Fork of [Infiziert90/PlayerTrack](https://github.com/Infiziert90/PlayerTrack) by Infi and kalilistic, for the Traditional Chinese client: yanmucorp Dalamud API 13 / .NET 9 and XIVTCLauncher. Do not install this on official Dalamud API 14 or 15.
 
-Download [PlayerTrack-api13-tw-3.6.1.2.zip](https://github.com/pollyhaei-ai/PlayerTrack/releases/download/api13-tw-3.6.1.2/PlayerTrack-api13-tw-3.6.1.2.zip). Do not use 3.6.1.1; it crashes on load because the sanitizer rejects `TraditionalChinese`. 3.6.1.2 returns the original world and datacenter names and has loaded in-game.
+Download [PlayerTrack-api13-tw-3.6.1.3.zip](https://github.com/pollyhaei-ai/PlayerTrack/releases/download/api13-tw-3.6.1.3/PlayerTrack-api13-tw-3.6.1.3.zip). Do not use 3.6.1.1; it crashes on load because the sanitizer rejects `TraditionalChinese`. 3.6.1.2 and later return the original world and datacenter names. 3.6.1.3 adds a Traditional Chinese UI.
 
 Put `PlayerTrack.dll` and `PlayerTrack.json` in `%AppData%\FFXIVSimpleLauncher\Dalamud\Config\devPlugins\PlayerTrack\` (or `Profiles\<profile ID>\Dalamud\devPlugins\PlayerTrack\` for a per-account plugin profile). Enable it in `/xldev`. `/ptrack` opens the main window and `/ptrackconfig` opens settings.
+
+The plugin UI follows Dalamud’s UI language. Set that to Traditional Chinese in `/xlsettings` (language code `tw`) so this translation loads. The default may show English. Simplified Chinese (`zh`) loads the Simplified strings.
 
 Nameplates and Lodestone/NetStone still need in-game checks on the Taiwan client. Upstream is MIT.
