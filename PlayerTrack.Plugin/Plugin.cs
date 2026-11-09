@@ -96,13 +96,23 @@ public class Plugin : IDalamudPlugin
 
     /// <summary>
     /// Sets the language to be used for loc.
+    /// Dalamud's Traditional Chinese code is <c>tw</c>, which maps to <c>zh-Hant</c>.
+    /// Simplified Chinese (<c>zh</c>) maps to <c>zh-Hans</c> and still falls back to Language.zh.resx.
     /// </summary>
     private void LanguageChanged(string langCode)
     {
-        var culture = new CultureInfo(langCode);
-
-        Language.Culture = culture;
-        Utils.CurrentCulture = culture;
+        try
+        {
+            var culture = UiLanguage.Resolve(langCode);
+            Language.Culture = culture;
+            Utils.CurrentCulture = culture;
+        }
+        catch (Exception ex)
+        {
+            PluginLog.Error(ex, $"Failed to apply UI language \"{langCode}\".");
+            Language.Culture = CultureInfo.InvariantCulture;
+            Utils.CurrentCulture = CultureInfo.InvariantCulture;
+        }
     }
 
     private static void SetPluginVersion()
