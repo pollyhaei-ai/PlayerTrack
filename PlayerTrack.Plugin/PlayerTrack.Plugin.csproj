@@ -63,4 +63,9 @@
 	    <DependentUpon>Language.resx</DependentUpon>
 	  </Compile>
 	</ItemGroup>
+
+	<!-- Dev installs read images/icon.png beside the DLL. Official icon stays at the repo root. -->
+	<ItemGroup>
+		<Content Include="..\images\icon.png" Link="images\icon.png" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
 </Project>
